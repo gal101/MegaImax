@@ -35,13 +35,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="favorites"
-        options={{
-          title: 'Favorites',
-          tabBarIcon: ({ color }) => <Ionicons name="heart-outline" size={28} color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="AI"
         options={{
           title: "Imax",
@@ -49,6 +42,13 @@ export default function TabLayout() {
           <Ionicons name="compass" size={28} color={color} />
         ),
        }}
+      />
+      <Tabs.Screen
+        name="favorites"
+        options={{
+          title: 'Favorites',
+          tabBarIcon: ({ color }) => <Ionicons name="heart-outline" size={28} color={color} />,
+        }}
       />
       <Tabs.Screen
         name="index"
