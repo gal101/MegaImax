@@ -1,0 +1,23 @@
+{
+    "lists": [
+      {
+        "id": 1,
+        "title": "Fruits",
+        "items": [
+          { "id": 101, "label": "Apple", "checked": false },
+          { "id": 102, "label": "Banana", "checked": true },
+          { "id": 103, "label": "Orange", "checked": false }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Vegetables",
+        "items": [
+          { "id": 201, "label": "Carrot", "checked": false },
+          { "id": 202, "label": "Broccoli", "checked": true },
+          { "id": 203, "label": "Spinach", "checked": false }
+        ]
+      }
+    ]
+  }
+  
