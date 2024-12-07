@@ -35,15 +35,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="AI"
-        options={{
-          title: "Imax",
-          tabBarIcon: ({ color }) => (
-          <Ionicons name="compass" size={28} color={color} />
-        ),
-       }}
-      />
-      <Tabs.Screen
         name="favorites"
         options={{
           title: 'Favorites',
@@ -58,17 +49,26 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="AI"
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => <Ionicons name="person-outline" size={28} color={color} />,
+          title: "Finder",
+          tabBarIcon: ({ color }) => (
+          <Ionicons name="search" size={28} color={color} />
+        ),
+       }}
+      />
+      <Tabs.Screen
+        name="report"
+        options={{
+          title: "Reports",
+          tabBarIcon: ({ color }) => <Ionicons name="clipboard-outline" size={28} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="test"
+        name="employees"
         options={{
-          title: 'Test',
-          tabBarIcon: ({ color }) => <Ionicons name="search" size={28} color={color} />,
+          title: "Employees",
+          tabBarIcon: ({ color }) => <Ionicons name="business" size={28} color={color} />,
         }}
       />
     </Tabs>

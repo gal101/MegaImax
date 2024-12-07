@@ -1,47 +1,64 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { initializeDatabase, checkProductExists, updateProductAisle, products } from '../database';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { initializeDatabase, checkProductExists, updateProductStatus, products } from '../database';
+
 export default function AIScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [productOnShelf, setProductOnShelf] = useState(false);
   const [recommendations, setRecommendations] = useState([]);
+  const [showReportOptions, setShowReportOptions] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   useEffect(() => {
     initializeDatabase();  // Initialize the database
   }, []);
+
   const handleSearch = async (query) => {
     checkProductExists(query, (products) => {
       setSearchResults(products);
       if (products.length > 0) {
-        setProductOnShelf(products[0].aisle !== 'Not on shelf');
+        setProductOnShelf(products[0].status === 'Available');
       }
     });
   };
-  const handleToggleShelfStatus = (product) => {
-    const newAisleStatus = product.aisle === 'Not on shelf' ? 'Fruits' : 'Not on shelf';
-    updateProductAisle(product.id, newAisleStatus);
-    setProductOnShelf(newAisleStatus !== 'Not on shelf');
-    handleSearch(searchQuery);  // Refresh the search results
-  };
+
   const handleInputChange = (text) => {
     setSearchQuery(text);
     if (text.length > 0) {
       const filteredProducts = products.filter(product =>
-        product.name.toLowerCase().startsWith(text.toLowerCase())
+        product.title.toLowerCase().includes(text.toLowerCase())
       );
       setRecommendations(filteredProducts);
     } else {
       setRecommendations([]);
     }
   };
-  const handleSelectRecommendation = (productName) => {
-    setSearchQuery(productName);
+
+  const handleSelectRecommendation = (productTitle) => {
+    setSearchQuery(productTitle);
     setRecommendations([]);
-    handleSearch(productName);
+    handleSearch(productTitle);
   };
+
+  const handleReport = (product) => {
+    setSelectedProduct(product);
+    setShowReportOptions(true);
+  };
+
+  const submitReport = (reason: 'Not available' | 'Expired') => {
+    if (selectedProduct) {
+      updateProductStatus(selectedProduct.id, reason);
+      setShowReportOptions(false);
+      setSelectedProduct(null);
+      handleSearch(searchQuery);
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Search Bar</Text>
+
       <View style={styles.searchBarContainer}>
         <TextInput
           placeholder="Căutați un produs"
@@ -56,35 +73,65 @@ export default function AIScreen() {
             {recommendations.map((product, index) => (
               <TouchableOpacity
                 key={index}
-                onPress={() => handleSelectRecommendation(product.name)}
+                onPress={() => handleSelectRecommendation(product.title)}
                 style={styles.recommendationItem}
               >
-                <Text style={styles.recommendationText}>{product.name} ({product.type})</Text>
+                <Image 
+                  source={{ uri: product.image }} 
+                  style={styles.recommendationImage}
+                />
+                <View style={styles.recommendationText}>
+                  <Text style={styles.recommendationTitle}>{product.title}</Text>
+                  <Text style={styles.recommendationPrice}>${product.price}</Text>
+                </View>
               </TouchableOpacity>
             ))}
           </View>
         )}
       </View>
+
       {searchResults.length > 0 && (
         <View style={styles.searchResults}>
-          <Text style={styles.searchResultsTitle}>Rezultate pentru "{searchQuery}":</Text>
+          <Text style={styles.searchResultsTitle}>Results for "{searchQuery}":</Text>
           {searchResults.map((product, index) => (
             <View key={index} style={styles.productCard}>
-              <Text style={styles.productText}>Nume: {product.name}</Text>
-              <Text style={styles.productText}>Categorie: {product.category}</Text>
-              <Text style={styles.productText}>Tip: {product.type}</Text>
-              <Text style={styles.productText}>Raft: {product.aisle}</Text>
-              <TouchableOpacity
-                style={[
-                  styles.shelfButton,
-                  { backgroundColor: product.aisle !== 'Not on shelf' ? '#4CAF50' : '#F44336' }
-                ]}
-                onPress={() => handleToggleShelfStatus(product)}
-              >
-                <Text style={styles.shelfButtonText}>
-                  {product.aisle !== 'Not on shelf' ? 'Pe raft' : 'Nu este pe raft'}
-                </Text>
-              </TouchableOpacity>
+              <Image 
+                source={{ uri: product.image }} 
+                style={styles.productImage}
+                resizeMode="contain"
+              />
+              <View style={styles.productInfo}>
+                <Text style={styles.productText}>{product.title}</Text>
+                <Text style={styles.productText}>Price: ${product.price}</Text>
+                <Text style={styles.productText}>Category: {product.category}</Text>
+                <Text style={styles.productText}>Status: {product.status}</Text>
+                
+                {product.status === 'Available' && (
+                  <TouchableOpacity
+                    style={styles.reportButton}
+                    onPress={() => handleReport(product)}
+                  >
+                    <Text style={styles.reportButtonText}>Report Issue</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+
+              {showReportOptions && selectedProduct?.id === product.id && (
+                <View style={styles.reportOptionsContainer}>
+                  <TouchableOpacity
+                    style={styles.reportOption}
+                    onPress={() => submitReport('Not available')}
+                  >
+                    <Text style={styles.reportOptionText}>Not available</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.reportOption}
+                    onPress={() => submitReport('Expired')}
+                  >
+                    <Text style={styles.reportOptionText}>Expired</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
             </View>
           ))}
         </View>
@@ -92,6 +139,7 @@ export default function AIScreen() {
     </ScrollView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     padding: 20,
@@ -137,13 +185,26 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   recommendationItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingVertical: 10,
     borderBottomColor: '#eee',
     borderBottomWidth: 1,
   },
-  recommendationText: {
+  recommendationImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 5,
+    marginRight: 10,
+  },
+  recommendationTitle: {
     fontSize: 16,
     color: '#333',
+  },
+  recommendationPrice: {
+    fontSize: 14,
+    color: '#4CAF50',
+    fontWeight: 'bold',
   },
   searchResults: {
     marginTop: 20,
@@ -172,12 +233,65 @@ const styles = StyleSheet.create({
   },
   shelfButton: {
     marginTop: 10,
-    padding: 10,
+    padding: 8,
     borderRadius: 5,
     alignItems: 'center',
+    width: 80,  // Make button smaller
   },
   shelfButtonText: {
     color: '#fff',
     fontSize: 16,
+  },
+  reportButton: {
+    marginTop: 10,
+    padding: 8,
+    borderRadius: 5,
+    alignItems: 'center',
+    width: 80,
+    backgroundColor: '#FF0000',
+  },
+  reportButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  reportOptionsContainer: {
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    gap: 10,
+  },
+  reportOption: {
+    flex: 1,
+    padding: 12,
+    borderRadius: 5,
+    backgroundColor: '#666',
+    alignItems: 'center',
+  },
+  reportOptionText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  reportedContainer: {
+    marginTop: 10,
+    padding: 8,
+    borderRadius: 5,
+    backgroundColor: '#666',
+    alignItems: 'center',
+  },
+  reportedText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  productImage: {
+    width: '100%',
+    height: 200,
+    marginBottom: 10,
+    borderRadius: 8,
+  },
+  productInfo: {
+    flex: 1,
   },
 });
