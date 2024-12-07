@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { THEME_COLORS } from '@/theme/colors';
 
 type CheckboxItem = {
   id: number;
@@ -10,43 +12,40 @@ type CheckboxItem = {
 type CheckboxListProps = {
   items: CheckboxItem[];
   onToggle?: (id: number, checked: boolean) => void; // Callback for toggling
+  onDelete?: (id: number) => void;
 };
 
-const CheckboxList: React.FC<CheckboxListProps> = ({ items, onToggle }) => {
-  const [checkboxes, setCheckboxes] = useState<CheckboxItem[]>(
-    items.map((item) => ({ ...item, checked: item.checked || false }))
-  );
-
-  const handlePress = (id: number) => {
-    const updatedCheckboxes = checkboxes.map((item) =>
-      item.id === id ? { ...item, checked: !item.checked } : item
-    );
-    setCheckboxes(updatedCheckboxes);
-
-    // Trigger the callback if provided
-    const toggledItem = updatedCheckboxes.find((item) => item.id === id);
-    if (onToggle && toggledItem) {
-      onToggle(toggledItem.id, toggledItem.checked!);
+const CheckboxList: React.FC<CheckboxListProps> = ({ items, onToggle, onDelete }) => {
+  const handlePress = (id: number, currentChecked: boolean) => {
+    if (onToggle) {
+      onToggle(id, !currentChecked);
     }
   };
 
   return (
     <View style={styles.checklist}>
-      {checkboxes.map((item) => (
-        <TouchableOpacity
-          key={item.id}
-          style={styles.checkboxContainer}
-          onPress={() => handlePress(item.id)}
-        >
-          <View
-            style={[styles.checkbox, item.checked && styles.checkboxChecked]}
+      {items.map((item) => (
+        <View key={item.id} style={styles.itemContainer}>
+          <TouchableOpacity
+            style={styles.checkboxContainer}
+            onPress={() => handlePress(item.id, item.checked || false)}
           >
-            {item.checked && <View style={styles.checkmark} />}
-          </View>
-          <Text style={[styles.label, item.checked && styles.labelChecked]}>
-            {item.label}
-          </Text>
-        </TouchableOpacity>
+            <View
+              style={[styles.checkbox, item.checked && styles.checkboxChecked]}
+            >
+              {item.checked && <View style={styles.checkmark} />}
+            </View>
+            <Text style={[styles.label, item.checked && styles.labelChecked]}>
+              {item.label}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.deleteButton}
+            onPress={() => onDelete?.(item.id)}
+          >
+            <Ionicons name="trash-outline" size={16} color="#888" />
+          </TouchableOpacity>
+        </View>
       ))}
     </View>
   );
@@ -55,7 +54,7 @@ const CheckboxList: React.FC<CheckboxListProps> = ({ items, onToggle }) => {
 const styles = StyleSheet.create({
   checklist: {
     backgroundColor: '#fff',
-    width: 200,
+    width: '100%', // Changed from 200 to full width
     padding: 20,
     borderRadius: 10,
     shadowColor: '#414856',
@@ -63,23 +62,30 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 10,
   },
-  checkboxContainer: {
+  itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 15,
+    paddingRight: 0, // Remove any padding that might affect alignment
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    marginRight: 10, // Add some space between checkbox and delete button
   },
   checkbox: {
     width: 20,
     height: 20,
     borderWidth: 2,
-    borderColor: '#4f29f0',
+    borderColor: THEME_COLORS.primary,
     borderRadius: 3,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
   },
   checkboxChecked: {
-    backgroundColor: '#4f29f0',
+    backgroundColor: THEME_COLORS.primary,
   },
   checkmark: {
     width: 10,
@@ -89,11 +95,17 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    color: '#414856',
+    color: THEME_COLORS.text,
   },
   labelChecked: {
-    color: '#c3c8de',
+    color: THEME_COLORS.textLight,
     textDecorationLine: 'line-through',
+  },
+  deleteButton: {
+    padding: 8,
+    position: 'absolute',
+    right: 0,
+    alignSelf: 'center',
   },
 });
 

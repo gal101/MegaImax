@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import { THEME_COLORS } from '@/theme/colors';
 
 interface NiceButtonProps {
   onPress: () => void; // The callback function triggered on button press
@@ -22,14 +23,20 @@ const NiceButton: React.FC<NiceButtonProps> = ({ onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
     borderWidth: 2,
-    borderColor: '#24b4fb',
-    backgroundColor: '#24b4fb',
-    borderRadius: 16,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    alignSelf: 'center',
-    margin: 10,
+    borderColor: THEME_COLORS.primary,
+    backgroundColor: THEME_COLORS.primary,
+    borderRadius: 30,
+    padding: 15,
+    zIndex: 1,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
   },
   content: {
     flexDirection: 'row',
