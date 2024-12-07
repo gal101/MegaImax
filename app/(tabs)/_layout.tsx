@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
 
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -27,17 +28,40 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
-        name="index"
+        name="products"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Products',
+          tabBarIcon: ({ color }) => <Ionicons name="pricetag-outline" size={28} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="favorites"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Favorites',
+          tabBarIcon: ({ color }) => <Ionicons name="heart-outline" size={28} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="AI"
+        options={{
+          title: "Imax",
+          tabBarIcon: ({ color }) => (
+          <Ionicons name="compass" size={28} color={color} />
+        ),
+       }}
+      />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Lists',
+          tabBarIcon: ({ color }) => <Ionicons name="list" size={28} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <Ionicons name="person-outline" size={28} color={color} />,
         }}
       />
       <Tabs.Screen

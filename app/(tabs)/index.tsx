@@ -52,7 +52,7 @@ const TabScreen = () => {
       });
       setLists(updatedLists);
       saveListsToFile(updatedLists);
-      setNewItemLabel('');
+      setNewItemLabel(newItemLabel);
       setItemModalVisible(false);
     }
   };
