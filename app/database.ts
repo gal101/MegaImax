@@ -1,5 +1,4 @@
 import { EventEmitter } from 'events';
-import * as FileSystem from 'expo-file-system';
 
 const JSONBIN_BIN_ID = '67551fb1e41b4d34e461b1d3';
 const JSONBIN_MASTER_KEY = '$2a$10$8Iblx7QYFXoRdZJlQKtG1.vYKlhodTx/6w0G1bsgIWjMRsthflNC2';

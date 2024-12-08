@@ -19,13 +19,15 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
+        tabBarStyle: {
+          position: 'relative',
+          height: Platform.OS === 'ios' ? 85 : 60,
+          paddingTop: Platform.OS === 'ios' ? 10 : 0,
+          paddingBottom: Platform.OS === 'ios' ? 25 : 10,
+          backgroundColor: '#fff',
+          borderTopWidth: 1,
+          borderTopColor: 'rgba(0,0,0,0.1)',
+        },
       }}>
       <Tabs.Screen
         name="products"

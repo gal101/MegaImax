@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, FlatList, Button, Text, Modal, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, StyleSheet, FlatList, Button, Text, Modal, TextInput, TouchableOpacity, Alert, Platform } from 'react-native';
 import NiceButton from '@/components/NiceButton';
 import CheckboxList from '@/components/CheckBoxList';
 import listsData from '@/lists.json';
 import * as FileSystem from 'expo-file-system';
 import { Ionicons } from '@expo/vector-icons';
 import { THEME_COLORS } from '@/theme/colors';
+import { searchItems } from '@/services/itemsService'; // Add this new import
+import { initializeDatabase, products, databaseEvents, checkProductExists } from '../database';
 
 const JSON_FILE_PATH = FileSystem.documentDirectory + 'lists.json';
 
@@ -32,22 +34,35 @@ const TabScreen = () => {
   const [itemModalVisible, setItemModalVisible] = useState(false);
   const [newListTitle, setNewListTitle] = useState('');
   const [newItemLabel, setNewItemLabel] = useState('');
+  const [suggestions, setSuggestions] = useState([]); // Add this state
   const [currentListId, setCurrentListId] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    // Load initial data from file
-    const loadLists = async () => {
+    const loadData = async () => {
       try {
+        await initializeDatabase(); // Initialize database first
         await initializeFileSystem(); // Make sure file exists first
         const fileContent = await FileSystem.readAsStringAsync(JSON_FILE_PATH);
         const data = JSON.parse(fileContent);
         setLists(data.lists);
       } catch (error) {
-        console.error('Error loading lists:', error);
+        console.error('Error loading data:', error);
         setLists(listsData.lists);
       }
     };
-    loadLists();
+    loadData();
+
+    // Add listener for database updates
+    const handleDatabaseUpdate = () => {
+      setProducts([...products]);
+    };
+    databaseEvents.addListener('productsUpdated', handleDatabaseUpdate);
+
+    return () => {
+      databaseEvents.removeListener('productsUpdated', handleDatabaseUpdate);
+    };
   }, []);
 
   const handleCreateList = () => {
@@ -86,12 +101,16 @@ const TabScreen = () => {
           id: maxItemId + 1,
           label: newItemLabel,
           checked: false,
+          // Use selected product's price if available, otherwise search in products array
+          price: selectedProduct ? selectedProduct.price : 
+                 products.find(p => p.title.toLowerCase() === newItemLabel.toLowerCase())?.price || 0
         };
         listToUpdate.items.push(newItem);
         
         setLists(newLists);
         saveListsToFile(newLists);
         setNewItemLabel('');
+        setSelectedProduct(null); // Clear selected product
         setItemModalVisible(false);
       }
     }
@@ -147,17 +166,44 @@ const TabScreen = () => {
     }
   };
 
+  const handleItemInputChange = (text) => {
+    setNewItemLabel(text);
+    if (text.length >= 2) {
+      checkProductExists(text, (foundProducts) => {
+        setSuggestions(foundProducts);
+      });
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleSuggestionSelect = (product) => {
+    // Update this to capture the price
+    setNewItemLabel(product.title);
+    setSuggestions([]);
+    // Store the selected product temporarily
+    setSelectedProduct(product);
+  };
+
+  const calculateListTotal = (items) => {
+    // Add null check and ensure price exists
+    return items.reduce((total, item) => total + (Number(item.price) || 0), 0).toFixed(2);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerTitle}>My Lists</Text>
       <FlatList
         data={lists}
         keyExtractor={(item) => String(item.id)}
-        contentContainerStyle={{ paddingBottom: 20 }} // Add padding at bottom
+        contentContainerStyle={styles.listContentContainer}
         renderItem={({ item }) => (
           <View style={styles.listContainer}>
             <View style={styles.listHeader}>
-              <Text style={styles.listTitle}>{item.title}</Text>
+              <View style={styles.listTitleContainer}>
+                <Text style={styles.listTitle}>{item.title}</Text>
+                <Text style={styles.listTotal}>{calculateListTotal(item.items)} RON</Text>
+              </View>
               {item.items.length === 0 && (
                 <TouchableOpacity
                   style={styles.listDeleteButton}
@@ -172,6 +218,7 @@ const TabScreen = () => {
               items={item.items}
               onToggle={(itemId, checked) => handleToggle(item.id, itemId, checked)}
               onDelete={(itemId) => handleDeleteItem(item.id, itemId)}
+              showPrices={true} // Add this prop if you want to show individual prices
             />
             <TouchableOpacity 
               style={styles.addItemButton}
@@ -182,7 +229,9 @@ const TabScreen = () => {
           </View>
         )}
       />
-      <NiceButton onPress={handleCreateList} />
+      <View style={styles.buttonWrapper}>
+        <NiceButton onPress={handleCreateList} />
+      </View>
       <Modal
         animationType="none"
         transparent={true}
@@ -230,15 +279,33 @@ const TabScreen = () => {
           <View style={styles.modalContainer}>
             <View style={[styles.modalView, styles.slideUp]}>
               <Text style={styles.modalText}>Enter the name for the new item:</Text>
-              <TextInput
-                style={styles.input}
-                value={newItemLabel}
-                onChangeText={setNewItemLabel}
-                autoFocus
-                onSubmitEditing={handleSaveItem}
-                keyboardType="default"
-                returnKeyType="done"
-              />
+              <View style={styles.inputContainer}>
+                <TextInput
+                  style={styles.input}
+                  value={newItemLabel}
+                  onChangeText={handleItemInputChange}
+                  autoFocus
+                  onSubmitEditing={handleSaveItem}
+                  keyboardType="default"
+                  returnKeyType="done"
+                />
+                {suggestions.length > 0 && (
+                  <View style={styles.suggestionsContainer}>
+                    <FlatList
+                      data={suggestions}
+                      keyExtractor={(item) => item.id.toString()}
+                      renderItem={({ item }) => (
+                        <TouchableOpacity
+                          style={styles.suggestionItem}
+                          onPress={() => handleSuggestionSelect(item)}
+                        >
+                          <Text style={styles.suggestionText}>{item.title}</Text>
+                        </TouchableOpacity>
+                      )}
+                    />
+                  </View>
+                )}
+              </View>
               <View style={styles.modalButtons}>
                 <TouchableOpacity 
                   key="save-item"
@@ -267,7 +334,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: 60, // Add this to match other tabs
+    paddingTop: 60,
+    // Remove iOS-specific bottom padding
   },
   headerTitle: {
     fontSize: 32,
@@ -286,10 +354,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
   },
+  listTitleContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginRight: 10,
+  },
   listTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  listTotal: {
+    fontSize: 16,
+    color: THEME_COLORS.primary,
+    fontWeight: '600',
   },
   listDeleteButton: {
     padding: 5,
@@ -372,6 +452,7 @@ const styles = StyleSheet.create({
     backgroundColor: THEME_COLORS.primary,
     borderRadius: 20,
     width: 40,
+
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
@@ -387,6 +468,40 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
+  },
+  listContentContainer: {
+    paddingBottom: Platform.OS === 'ios' ? 140 : 100,
+  },
+  buttonWrapper: {
+    position: 'absolute',
+    bottom: Platform.OS === 'ios' ? 90 : 20,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+  },
+  inputContainer: {
+    width: '100%',
+    position: 'relative',
+  },
+  suggestionsContainer: {
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    right: 0,
+    backgroundColor: 'white',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    maxHeight: 200,
+    zIndex: 1000,
+  },
+  suggestionItem: {
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  suggestionText: {
+    fontSize: 16,
   },
 });
 
