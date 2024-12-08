@@ -77,13 +77,14 @@ export const checkProductExists = (query: string, callback: (products: Product[]
   callback(foundProducts);
 };
 
-export const updateProductStatus = async (id: number, newStatus: Product['status']) => {
+// Convert integer issue type to status string
+export const updateProductStatus = async (id: number, newStatus: 'Not available' | 'Expired' | 'Available') => {
   const productIndex = products.findIndex(product => product.id === id);
   if (productIndex !== -1) {
+    // Always use string status
     products[productIndex].status = newStatus;
     
     try {
-      // Update JSONbin.io with the new data
       const response = await fetch(JSONBIN_API_URL, {
         method: 'PUT',
         headers: {
@@ -106,6 +107,35 @@ export const updateProductStatus = async (id: number, newStatus: Product['status
 
 export const clearProductReport = async (id: number) => {
   await updateProductStatus(id, 'Available');
+};
+
+export const clearAllProductsByStatus = async (status: 'Not available' | 'Expired') => {
+  // Find all products with the given status
+  const productsToUpdate = products.filter(product => product.status === status);
+  
+  // Update all matching products to Available
+  productsToUpdate.forEach(product => {
+    product.status = 'Available';
+  });
+
+  try {
+    const response = await fetch(JSONBIN_API_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSONBIN_MASTER_KEY,
+      },
+      body: JSON.stringify(products),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to update data in JSONbin.io');
+    }
+
+    databaseEvents.emit('productsUpdated', products);
+  } catch (error) {
+    console.error('Error clearing products:', error);
+  }
 };
 
 export { products };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
-import { products, databaseEvents, initializeDatabase } from '../database';
+import { products, databaseEvents, initializeDatabase, clearAllProductsByStatus } from '../database';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useFocusEffect } from '@react-navigation/native';
@@ -44,6 +44,10 @@ export default function ReportScreen() {
     });
   };
 
+  const clearProductsByCategory = (category) => {
+    clearAllProductsByStatus(category);
+  };
+
   const groupedReports = {
     'Not available': reportedProducts.filter(p => p.status === 'Not available'),
     'Expired': reportedProducts.filter(p => p.status === 'Expired')
@@ -72,12 +76,23 @@ export default function ReportScreen() {
       {Object.entries(groupedReports).map(([type, products]) => (
         <View key={type} style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Ionicons 
-              name={type === 'Expired' ? 'warning' : 'alert-circle'} 
-              size={24} 
-              color={type === 'Expired' ? '#ff8c00' : '#ff4444'} 
-            />
-            <Text style={styles.sectionTitle}>{type}</Text>
+            <View style={styles.sectionHeaderLeft}>
+              <Ionicons 
+                name={type === 'Expired' ? 'warning' : 'alert-circle'} 
+                size={24} 
+                color={type === 'Expired' ? '#ff8c00' : '#ff4444'}
+                style={styles.sectionHeaderIcon} 
+              />
+              <Text style={styles.sectionTitle}>{type}</Text>
+            </View>
+            {products.length > 0 && (
+              <TouchableOpacity
+                style={styles.clearButton}
+                onPress={() => clearProductsByCategory(type)}
+              >
+                <Text style={styles.clearButtonText}>Clear All</Text>
+              </TouchableOpacity>
+            )}
           </View>
           {products.map((product, index) => (
             <TouchableOpacity 
@@ -150,13 +165,33 @@ const styles = StyleSheet.create({
   sectionHeader: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     marginBottom: 10,
+    paddingVertical: 5,
+  },
+  sectionHeaderLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  sectionHeaderIcon: {
+    marginRight: 10,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 0, // Remove bottom margin since parent has padding
     color: '#666',
+  },
+  clearButton: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 15,
+  },
+  clearButtonText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
   },
   productCard: {
     backgroundColor: '#fff',

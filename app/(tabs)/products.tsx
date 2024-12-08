@@ -9,6 +9,7 @@ import { updateProductStatus } from '../database';
 import { products as dbProducts, databaseEvents } from '../database';
 import { useFocusEffect } from '@react-navigation/native';
 import { initializeDatabase } from '../database';
+import { addXP, ISSUE_NOT_AVAILABLE, ISSUE_EXPIRED } from '../userProgress';
 
 export default function ProductsScreen() {
   const [products, setProducts] = useState(dbProducts);
@@ -68,16 +69,18 @@ export default function ProductsScreen() {
     }
   };
 
-  const submitReport = (reason: 'Not available' | 'Expired') => {
+  const submitReport = (status: 'Not available' | 'Expired') => {
     if (selectedProduct) {
-      updateProductStatus(selectedProduct.id, reason);
+      updateProductStatus(selectedProduct.id, status);
+      addXP(); // Add XP for reporting
       setShowReportOptions(false);
       setSelectedProduct(null);
     }
   };
 
-  const handlePanelReport = (product: Product, reason: 'Not available' | 'Expired') => {
-    updateProductStatus(product.id, reason);
+  const handlePanelReport = (product: Product, issueType: number) => {
+    updateProductStatus(product.id, issueType);
+    addXP(10); // Award XP for reporting
     setReportingProduct(null);
   };
 

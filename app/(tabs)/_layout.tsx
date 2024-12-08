@@ -50,15 +50,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <Ionicons name="list" size={28} color={color} />,
         }}
       />
-      {/* <Tabs.Screen
-        name="AI"
-        options={{
-          title: "Finder",
-          tabBarIcon: ({ color }) => (
-          <Ionicons name="search" size={28} color={color} />
-        ),
-       }}
-      /> */}
       <Tabs.Screen
         name="report"
         options={{
@@ -72,6 +63,15 @@ export default function TabLayout() {
           title: "Employees",
           tabBarIcon: ({ color }) => <Ionicons name="business" size={28} color={color} />,
         }}
+      />
+       <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color }) => (
+          <Ionicons name="person" size={28} color={color} />
+        ),
+       }}
       />
     </Tabs>
   );

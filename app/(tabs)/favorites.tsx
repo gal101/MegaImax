@@ -6,6 +6,7 @@ import { Product } from './types';
 import { useFocusEffect } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import { updateProductStatus, initializeDatabase, databaseEvents, refreshLikedProducts, products as dbProducts } from '../database';
+import { addXP, ISSUE_NOT_AVAILABLE, ISSUE_EXPIRED } from '../userProgress';
 
 export default function FavoritesScreen() {
   const [likedProducts, setLikedProducts] = useState<Product[]>([]);
@@ -69,16 +70,15 @@ export default function FavoritesScreen() {
     }
   };
 
-  const submitReport = useCallback(async (reason: 'Not available' | 'Expired') => {
+  const submitReport = useCallback(async (status: 'Not available' | 'Expired') => {
     if (selectedProduct) {
-      // First close the modal
       setShowReportOptions(false);
       setSelectedProduct(null);
       
-      // Then update the status
-      await updateProductStatus(selectedProduct.id, reason);
+      await updateProductStatus(selectedProduct.id, status);
       await refreshLikedProducts();
-      updateLikedProductsStatus(); // Add this line
+      addXP(); // Award XP for reporting
+      updateLikedProductsStatus();
     }
   }, [selectedProduct, updateLikedProductsStatus]);
 

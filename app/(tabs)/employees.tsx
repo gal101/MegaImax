@@ -108,7 +108,9 @@ export default function EmployeesScreen() {
                 resizeMode="contain"
               />
               <View style={styles.productHeader}>
-                <Text style={styles.productName}>{product.title}</Text>
+                <View style={styles.productNameContainer}>
+                  <Text style={styles.productName}>{product.title}</Text>
+                </View>
                 <Text style={styles.priceText}>${product.price}</Text>
               </View>
               <Text style={styles.description}>{product.description}</Text>
@@ -202,13 +204,25 @@ const styles = StyleSheet.create({
   },
   productHeader: {
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     marginBottom: 10,
+    width: '100%',
+  },
+  productNameContainer: {
+    flex: 1,
+    marginRight: 10,
   },
   productName: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 10,
+    flexWrap: 'wrap',
+  },
+  priceText: {
+    fontSize: 18,
+    color: '#4CAF50',
+    fontWeight: 'bold',
+    flexShrink: 0,
   },
   productDetails: {
     borderTopWidth: 1,
@@ -238,11 +252,6 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 8,
     marginBottom: 10,
-  },
-  priceText: {
-    fontSize: 18,
-    color: '#4CAF50',
-    fontWeight: 'bold',
   },
   description: {
     color: '#666',
