@@ -117,14 +117,15 @@ export default function EmployeesScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
     backgroundColor: '#f5f5f5',
+    paddingTop: 60, // Add this to match other tabs
+    padding: 20,
   },
-  title: {
-    fontSize: 28,
+  title: { // Change to headerTitle to match other tabs
+    fontSize: 32,
     fontWeight: 'bold',
+    color: '#000',
     marginBottom: 20,
-    color: '#333',
   },
   searchSection: {
     marginBottom: 20,

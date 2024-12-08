@@ -115,8 +115,8 @@ export default function ProductsScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topSpacer} />
-      <View style={styles.header}>
+      <Text style={styles.headerTitle}>Products</Text>
+      <View style={styles.searchContainer}>
         <View style={styles.searchBar}>
           <Icon name="search" size={20} color="#666" style={styles.searchIcon} />
           <TextInput
@@ -242,12 +242,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    paddingTop: 60, // Add padding instead of spacer
   },
-  topSpacer: {
-    height: 80,
-    backgroundColor: '#fff',
-  },
-  header: {
+  searchContainer: {
     padding: 15,
     flexDirection: 'row',
     alignItems: 'center',
@@ -480,5 +477,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 12,
     fontWeight: 'bold',
+  },
+  headerTitle: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 20,
+    paddingHorizontal: 20,
   },
 });

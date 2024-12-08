@@ -43,8 +43,7 @@ export default function ReportScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Product Reports</Text>
-      
+      <Text style={styles.headerTitle}>Reports</Text>
       <View style={styles.statsContainer}>
         <View style={styles.statCard}>
           <Ionicons name="alert-circle" size={24} color="#ff4444" />
@@ -106,14 +105,9 @@ export default function ReportScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: '#f5f5f5',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: '#333',
+    paddingTop: 60, // Add padding instead of spacer
+    padding: 20,
   },
   statsContainer: {
     flexDirection: 'row',
@@ -193,5 +187,11 @@ const styles = StyleSheet.create({
     color: '#666',
     textAlign: 'center',
     padding: 20,
+  },
+  headerTitle: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 20,
   },
 });

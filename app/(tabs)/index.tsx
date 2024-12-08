@@ -153,6 +153,7 @@ const TabScreen = () => {
       <FlatList
         data={lists}
         keyExtractor={(item) => String(item.id)}
+        contentContainerStyle={{ paddingBottom: 20 }} // Add padding at bottom
         renderItem={({ item }) => (
           <View style={styles.listContainer}>
             <View style={styles.listHeader}>
@@ -265,18 +266,19 @@ const TabScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: '#fff',
+    paddingTop: 60, // Add this to match other tabs
   },
   headerTitle: {
     fontSize: 32,
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 20,
-    marginTop: 10,
+    paddingHorizontal: 20,
   },
   listContainer: {
     marginBottom: 20,
+    paddingHorizontal: 20, // Add horizontal padding
   },
   listHeader: {
     flexDirection: 'row',

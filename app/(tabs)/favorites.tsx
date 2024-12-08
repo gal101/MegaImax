@@ -47,10 +47,7 @@ export default function FavoritesScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topSpacer} />
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>Favorite Products</Text>
-      </View>
+      <Text style={styles.headerTitle}>Favorites</Text>
       {likedProducts.length === 0 ? (
         <View style={styles.emptyState}>
           <Icon name="heart-o" size={50} color="#ccc" />
@@ -72,30 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
-  },
-  topSpacer: {
-    height: 80,
-    backgroundColor: '#fff',
-  },
-  headerContainer: {
-    backgroundColor: '#fff',
-    paddingBottom: 15,
-    alignItems: 'center',
-    ...Platform.select({
-      ios: {
-        borderBottomWidth: 1,
-        borderBottomColor: '#eee',
-      },
-      android: {
-        elevation: 4,
-        marginBottom: 4,
-      },
-    }),
-  },
-  header: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    paddingTop: 60, // Add padding instead of spacer
   },
   list: {
     padding: 16,
@@ -170,5 +144,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#666',
     marginTop: 16,
+  },
+  headerTitle: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 20,
+    paddingHorizontal: 20,
   },
 });
