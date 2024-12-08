@@ -1,24 +1,54 @@
 import React, { useState, useCallback } from 'react';
 import { FlatList, View, Image, StyleSheet, Text, TouchableOpacity, Platform, Modal, ScrollView } from 'react-native';
-import { getLikedProducts, removeLikedProduct, addListener } from './likedProducts';
+import { getLikedProducts, removeLikedProduct, addListener, refreshProductStatuses } from './likedProducts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Product } from './types';
 import { useFocusEffect } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
-import { updateProductStatus } from '../database';
+import { updateProductStatus, initializeDatabase, databaseEvents, refreshLikedProducts, products as dbProducts } from '../database';
 
 export default function FavoritesScreen() {
   const [likedProducts, setLikedProducts] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showReportOptions, setShowReportOptions] = useState(false);
 
+  const updateLikedProductsStatus = useCallback(() => {
+    const currentLiked = getLikedProducts();
+    const updatedLiked = currentLiked.map(liked => {
+      // Find the latest status from dbProducts
+      const dbProduct = dbProducts.find(p => p.id === liked.id);
+      return dbProduct ? { ...liked, status: dbProduct.status } : liked;
+    });
+    setLikedProducts(updatedLiked);
+  }, []);
+
   useFocusEffect(
     useCallback(() => {
-      setLikedProducts(getLikedProducts());
-      const unsubscribe = addListener(() => {
+      const initialize = async () => {
+        await initializeDatabase();
+        await refreshProductStatuses(); // Refresh liked product statuses
         setLikedProducts(getLikedProducts());
-      });
-      return () => unsubscribe();
+      };
+      initialize();
+      
+      // Add periodic status refresh
+      const statusRefreshInterval = setInterval(() => {
+        refreshProductStatuses().then(() => {
+          setLikedProducts(getLikedProducts());
+        });
+      }, 5000); // Check every 5 seconds
+
+      // Add database events listener
+      const handleDatabaseUpdate = async () => {
+        await refreshProductStatuses();
+        setLikedProducts(getLikedProducts());
+      };
+      databaseEvents.addListener('productsUpdated', handleDatabaseUpdate);
+
+      return () => {
+        clearInterval(statusRefreshInterval);
+        databaseEvents.removeListener('productsUpdated', handleDatabaseUpdate);
+      };
     }, [])
   );
 
@@ -39,13 +69,18 @@ export default function FavoritesScreen() {
     }
   };
 
-  const submitReport = (reason: 'Not available' | 'Expired') => {
+  const submitReport = useCallback(async (reason: 'Not available' | 'Expired') => {
     if (selectedProduct) {
-      updateProductStatus(selectedProduct.id, reason);
+      // First close the modal
       setShowReportOptions(false);
       setSelectedProduct(null);
+      
+      // Then update the status
+      await updateProductStatus(selectedProduct.id, reason);
+      await refreshLikedProducts();
+      updateLikedProductsStatus(); // Add this line
     }
-  };
+  }, [selectedProduct, updateLikedProductsStatus]);
 
   const renderFavorite = ({ item }: { item: Product }) => (
     <TouchableOpacity 

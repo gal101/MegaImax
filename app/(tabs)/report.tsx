@@ -1,25 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
-import { products, databaseEvents } from '../database';
+import { products, databaseEvents, initializeDatabase } from '../database';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useFocusEffect } from '@react-navigation/native';
 
 export default function ReportScreen() {
   const router = useRouter();
   const [reportedProducts, setReportedProducts] = useState([]);
 
-  useEffect(() => {
-    // Initial load
-    loadReportedProducts();
+  useFocusEffect(
+    useCallback(() => {
+      // Initialize database when tab is focused
+      initializeDatabase();
+      
+      // Initial load
+      loadReportedProducts();
 
-    // Listen for database updates
-    databaseEvents.addListener('productsUpdated', loadReportedProducts);
+      // Add database events listener
+      const handleDatabaseUpdate = () => {
+        loadReportedProducts();
+      };
+      databaseEvents.addListener('productsUpdated', handleDatabaseUpdate);
 
-    // Cleanup listener when component unmounts
-    return () => {
-      databaseEvents.removeListener('productsUpdated', loadReportedProducts);
-    };
-  }, []);
+      return () => {
+        databaseEvents.removeListener('productsUpdated', handleDatabaseUpdate);
+      };
+    }, [])
+  );
 
   const loadReportedProducts = () => {
     const filtered = products.filter(

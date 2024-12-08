@@ -3,12 +3,27 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, Image 
 import { checkProductExists, clearProductReport, products } from '../database';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams } from 'expo-router';
+import { useFocusEffect } from '@react-navigation/native';
+import { useCallback } from 'react';
+import { initializeDatabase } from '../database';
 
 export default function EmployeesScreen() {
   const { searchQuery: initialSearch } = useLocalSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
+
+  useFocusEffect(
+    useCallback(() => {
+      // Initialize database when tab is focused
+      initializeDatabase();
+
+      if (initialSearch) {
+        setSearchQuery(initialSearch.toString());
+        handleSearch(initialSearch.toString());
+      }
+    }, [initialSearch])
+  );
 
   useEffect(() => {
     if (initialSearch) {

@@ -7,9 +7,10 @@ import { Product } from './types';
 import * as Haptics from 'expo-haptics';
 import { updateProductStatus } from '../database';
 import { products as dbProducts, databaseEvents } from '../database';
+import { useFocusEffect } from '@react-navigation/native';
+import { initializeDatabase } from '../database';
 
 export default function ProductsScreen() {
-  // Replace static products with state
   const [products, setProducts] = useState(dbProducts);
   const [likedProducts, setLikedProducts] = useState<Product[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,23 +19,29 @@ export default function ProductsScreen() {
   const [showReportOptions, setShowReportOptions] = useState(false);
   const [reportingProduct, setReportingProduct] = useState<number | null>(null);
 
-  useEffect(() => {
-    // Existing liked products listener
-    setLikedProducts(getLikedProducts());
-    const likedUnsubscribe = addListener(() => {
+  useFocusEffect(
+    useCallback(() => {
+      // Initialize database and update products when tab is focused
+      initializeDatabase();
+
+      // Existing liked products listener
       setLikedProducts(getLikedProducts());
-    });
+      const likedUnsubscribe = addListener(() => {
+        setLikedProducts(getLikedProducts());
+      });
 
-    // Add database events listener
-    const databaseUnsubscribe = databaseEvents.addListener('productsUpdated', () => {
-      setProducts([...dbProducts]); // Update products when database changes
-    });
+      // Add database events listener
+      const handleDatabaseUpdate = () => {
+        setProducts([...dbProducts]);
+      };
+      databaseEvents.addListener('productsUpdated', handleDatabaseUpdate);
 
-    return () => {
-      likedUnsubscribe();
-      databaseEvents.removeListener('productsUpdated', databaseUnsubscribe);
-    };
-  }, []);
+      return () => {
+        likedUnsubscribe();
+        databaseEvents.removeListener('productsUpdated', handleDatabaseUpdate);
+      };
+    }, [])
+  );
 
   const isLiked = useCallback((product: Product) => {
     return likedProducts.some(p => p.id === product.id);
