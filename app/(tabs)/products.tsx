@@ -221,6 +221,9 @@ export default function ProductsScreen() {
                   <Text style={styles.modalDetailText}>
                     Status: {selectedProduct.status}
                   </Text>
+                  <Text style={styles.modalDetailText}>
+                    <Icon name="map-marker" size={16} color="#666" /> Location: {selectedProduct.location}
+                  </Text>
                 </View>
 
                 <Text style={styles.modalDescription}>
@@ -399,11 +402,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
     borderRadius: 10,
     marginBottom: 20,
+    gap: 8,
   },
   modalDetailText: {
     fontSize: 16,
     color: '#444',
-    marginBottom: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   likeButton: {
     flexDirection: 'row',

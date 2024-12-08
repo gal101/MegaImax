@@ -48,7 +48,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <Ionicons name="list" size={28} color={color} />,
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="AI"
         options={{
           title: "Finder",
@@ -56,7 +56,7 @@ export default function TabLayout() {
           <Ionicons name="search" size={28} color={color} />
         ),
        }}
-      />
+      /> */}
       <Tabs.Screen
         name="report"
         options={{
