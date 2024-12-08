@@ -6,7 +6,8 @@
       "image": "https://www.napolact.ro/uploads/products/3037/lapte-de-consum-35-grasime.png",
       "description": "Lapte de vacă integral, pasteurizat și omogenizat",
       "category": "Lactate",
-      "location": "Row 2, Bottom Shelf, Dairy Section"
+      "location": "Row 2, Bottom Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 2,
@@ -15,7 +16,8 @@
       "image": "https://www.zuzu.ro/storage/products/March2019/EwqWndDywTSQ2IBYeoqz.png",
       "description": "Lapte proaspăt de vacă, pasteurizat la temperatură înaltă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 3,
@@ -24,7 +26,8 @@
       "image": "https://www.velpitar.ro/wp-content/uploads/2020/03/paine-alba-feliata-500g.png",
       "description": "Pâine albă feliată din făină de grâu",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 4,
@@ -33,7 +36,8 @@
       "image": "https://www.danoneromania.ro/wp-content/uploads/2021/03/iaurt-natural-140g.png",
       "description": "Iaurt natural din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 5,
@@ -42,7 +46,8 @@
       "image": "https://cristim.ro/wp-content/uploads/2019/10/salam-sasesc.png",
       "description": "Salam săsesc din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 6,
@@ -51,7 +56,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSdwDzpD3UHCr_SYDxiTlUD9E1oGO07wcC2HbpKY091lIhf-nidxK1Z0uEKqAK-bKb7f2y4x4E3TBmdSWS6lu-GWFsDFzrSUQdb5WKZ5CWHerCwBSuHpoU3ASKADJAT9G02gUKJIwo&usqp=CAc",
       "description": "Băutură răcoritoare carbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 7,
@@ -60,7 +66,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSoCo2FAKilsP503_HcUpO22v_7hTR_AkCKJIxwckboVA18a48YLMUowT1jNHmJqVI4VPppNnAm-IBw7QiyV-2SiaDACkNLKbxdc-rs6nXBThRyHBHOkrIg310N8LSDsTP01_l78Q&usqp=CAc",
       "description": "Ciocolată cu lapte",
       "category": "Dulciuri",
-      "location": "Row 5, 2nd Shelf, Sweets Area"
+      "location": "Row 5, 2nd Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 8,
@@ -69,7 +76,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9zhXnW-cOfBXvnb4qgj2Js9OzTF9sINgu4m5WHW8rNWS4clmY2xth5wSf2Sg&s",
       "description": "Ulei de floarea soarelui pentru gătit",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 9,
@@ -78,7 +86,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQMb8E_FMUU6oJeMPxskBDOaz2MV49K5OfzOpUmmg7-fLia9P-v4URCSrGbjDSWGOZtLRNhN3wSMnTHvWSDhnGi5gZYUouqScYS81Qrpg&usqp=CAc",
       "description": "Conservă de carne de porc",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 10,
@@ -87,7 +96,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 11,
@@ -96,7 +106,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS7NJ7rqoNDuP1C2ZypkE92J0bN8gLj38mvrbhYiGPPf5PwNSFng8CvCRZRaLwVucVR44D0-97ySMXyn7ccqrcEobkHZ-pSazha-Nz6GUY4plMAP85sjnisIhRXc-O-Z7N1IhoAGAE&usqp=CAc",
       "description": "Făină albă de grâu",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 12,
@@ -105,7 +116,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuKuhi8qxusbcM-Lgdtt-aVK-AZ4o3t1T6gpkvAtMWHzImRMvdJic9skOwn1I&s",
       "description": "Zahăr alb cristal",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 13,
@@ -114,7 +126,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ7qsEBDtiIZCiSIB8PmCY8B8JQ7kIeRixMdCIlqofb5N2UdS5r6_OzuOpmpICEg1ORSMuUaYtTgyO8JNL8n_He5KyT4DviD_FVeOYxm9WuQY0GPhMP49jduigC0Z9ivwt1zFGFjQ&usqp=CAc",
       "description": "Biscuiți cu cremă de vanilie",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 14,
@@ -123,7 +136,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzHPTgJ2yYeZXq_CkkSQWEBq6KyTmZpiTGsg_GeKB9mtNaVNbWBb5q_9naZQ&s",
       "description": "Cârnați din carne de pui",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 15,
@@ -132,7 +146,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Băutură răcoritoare carbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 16,
@@ -141,7 +156,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTlONd-rJtqv07VAE9tUYwae4u1B6LuWx9GlLkTMSCO9opuc7EC6XDhoixs4sjxwYvFhFY_Q2S3Ff7miA7TkZ-6cTRFrqheaOdW0r8KoOjt5XxeqF7aD0suCBlFDYytVvLjWFC3mRw&usqp=CAc",
       "description": "Iaurt grecesc din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 17,
@@ -150,7 +166,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Pâine neagră feliată din făină de grâu",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 18,
@@ -159,7 +176,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT5HKgaCDa0KRiCgMMzAJuTwtB9fiNBheV7oUQlna7ecY7g6NMJHA88ddlKCd_DS3ADYbB9Fbbqsf4sh7X-ijLdoZwGBOe7zbETqUgzxORBcCriZ-K0bA0kotzh0g-0JROaKD1gnbY&usqp=CAc",
       "description": "Conservă de pește în ulei",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 19,
@@ -168,7 +186,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSx58QAW4vAiqJ-INC5Ro__FtqwV1RVawy8gFOFL0jZxzNgBAItmbI-yGvo-OeqxZ33DR_OHRtecPI9ZSlOGIrU7WkEqlU7U8vTLLfNfjOtS0XQHM6WzDWfz8RMc-XiAdRpsvGXgEhiKQ&usqp=CAc",
       "description": "Ciocolată cu lapte",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 20,
@@ -177,7 +196,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbEdmqvvopDwP8ObKEjGdd4ClvnAJgwcxhCu04BFKQKAlafaxphEMBtU9yWrw&s",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 21,
@@ -186,7 +206,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdp2P9hXt2_wjSJal6gz03ogvWo_tbfq7R8IJ0k9BGjyeRSRJNehvvv0sXWfg&s",
       "description": "Lapte proaspăt de vacă, pasteurizat la temperatură înaltă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 22,
@@ -195,7 +216,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Pâine graham feliată din făină de grâu",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 23,
@@ -204,7 +226,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0AF3eTgkf-C4csSLf_InRu2KdSve4gXL-toilrUDe_oMBI0g3J6P8pf95E4o&s",
       "description": "Iaurt natural din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 24,
@@ -213,7 +236,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Salam Victoria din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 25,
@@ -222,7 +246,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ_LMRD7RMK23c7HHDFsSPItT_wW_3p4mnpxxVbiRAK8gzWAcqGUET07MTqzEijrxkUq_fmEjU-FSHkOmZ4OHNdxhBrVNXpaZMXq-yPWgGtW3fOhZBuqTFpedj5Pf7Drm8etxIibfY&usqp=CAc",
       "description": "Băutură răcoritoare carbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 26,
@@ -231,7 +256,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXC2dtZGPztKpu-HkQo-8sZxuxpSKj8IEEK8QKwFs0wKHLi2yavYlXQXtZyUA&s",
       "description": "Ciocolată cu rom",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 27,
@@ -240,7 +266,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6hqVXgXsuu8WvLvniM5RVczV_LQN9ftMn291kRUpujRxe5QG7jShQkolPw&s",
       "description": "Ulei de măsline extra virgin pentru gătit",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 28,
@@ -249,7 +276,8 @@
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSN3HtkI3saQLoW6PSyPyLGoR99biRow6kvQ_n1hn_-RcwtLaDGf5tFwg0dReylDfX7cV4nxarVypro3hRiwdpE1iHdbrQOk0bRc8t4HcVlo6Oi_Ec4Oz9otCY3M3UyGkZz8M5mQKmp_qk&usqp=CAc",
       "description": "Conservă de fasole boabe",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 29,
@@ -258,7 +286,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGxKye07sLstQi5KWxszT78NwQ-zIN9VXx8g5oTeVn1h-U68sg2LieTR5am5U&s",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 30,
@@ -267,7 +296,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT_NHI6npwQVZgQfnH26b0_Nt-nvjnGWoIdj_LAX4IcezcRoo7z4VshOUqqHgNQXEl-i3FJoppCRjkb9hjfU4sBp8f5aQoY25a-Q6GkABRPPL7e_Mbq2hZzzJL53duG&usqp=CAc",
       "description": "Făină integrală de grâu",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 31,
@@ -276,7 +306,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTogU1_-2tczHUpfoFwteeaGHDQAR7rvHFmhK3BvYZ80DGsPlYPbB2HD0We3Jk&s",
       "description": "Zahăr brun din trestie de zahăr",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 32,
@@ -285,7 +316,8 @@
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSnWMZcA1GDPScsVNOrNYoV7Oh1WfEFYX-ah2SR3JmcWfo_PkerdtvqfMqCH05XKp8vvFy1H0vdIbqCElw-9UJUvypTBDMI1aTZmoGlENFnheqb7z_IC269Yp2KdsMpa4w94FvI8Q&usqp=CAc",
       "description": "Biscuiți digestivi din făină integrală",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 33,
@@ -294,7 +326,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Cârnați din carne de vită",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 34,
@@ -303,7 +336,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSCp5GsMIbG2-PsgE9s7eNMS4FLJcr3dfAz7vIfGdmmofR2R5617uix6gnGQ&s",
       "description": "Băutură răcoritoare carbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 35,
@@ -312,7 +346,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQtRZlFED7QX-A_C31oW6nnK-Ilx0wXWT-ZGTYY61Xkhqed1HuUt6rifvKfhKZv2ZGDSlBrj5DEpqgd9oBU6dkSEZQfQMLKqNpwDxNmOroOqo2cZbQTcJ9hCBEJLjoc1y8oGra5mMndnZE&usqp=CAc",
       "description": "Iaurt cu fructe din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 36,
@@ -321,7 +356,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtg4iP5a14nXcquNqQDpMFQUuFg7a6Q5DWDkcebrpPwbV6nVgBZPPQb9nHdh0&s",
       "description": "Pâine integrală feliată din făină de grâu",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 37,
@@ -330,7 +366,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iz0eBEcBMCtjjp7BfoUEc8-Fim4i22ZWyvmGLGwo6I_UnYIWpeMnPxPwMIg&s",
       "description": "Conservă de mazăre boabe",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 38,
@@ -339,7 +376,8 @@
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTr_FyI9WzuH5GO2HdxqY88aHyIFvHqnoe8WzBzG_c3Pb61ES5m5_Nx5lLq-xECHhgDFef0-XsirTy_i8NBaY1z4Q9rqzj7hb_WePccSs1Fhj79_7rz2Sz7t30iPINxiyMTMkiC9cI&usqp=CAc",
       "description": "Ciocolată premium",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 39,
@@ -348,7 +386,8 @@
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS-_FNHg1LaR9KIiSLR22CxX2EUJsYdY3WbyWnQgskFFXg_QXjTtZl5TkP1zlX1izFK-qcfFeYYV_82PgCSdmZTzid5DFJhh64-L8ElYVbza1C4JLqLdJkHSMUYsU7kTw&usqp=CAc",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 40,
@@ -357,7 +396,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSeqLvno1q6XJ8Z-g0g4-sl27A491JIY-zcFBR0mIAfpqPFZ2gTEJ4tP3w2jhqtfSwFBm-cwyQESSqpBYhlP9-OGOzkXYrI6ONuGci5oj7AWFwn8eI4Ux1J2RTMSP2jGlxWjpH8L4M&usqp=CAc",
       "description": "Lapte bio de vacă, pasteurizat și omogenizat",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 41,
@@ -366,7 +406,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTDRN_CVhT9tmqmsUt0cdftcTxPKSJXIwCLGxErmfMaQqN29WpVxNDfSj4bw&s",
       "description": "Pâine de secară feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 42,
@@ -375,7 +416,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Iaurt cu fructe din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 43,
@@ -384,7 +426,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Salam de Sibiu din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 44,
@@ -393,7 +436,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Băutură răcoritoare necarbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 45,
@@ -402,7 +446,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkc83x6q71s68o8oj_UQ3v3-A5qO4VvtW_pWgt2DQXId-WjNV27lA1OEf4KA&s",
       "description": "Ciocolată premium",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 46,
@@ -411,7 +456,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcREs9fF_cel9XqJ1XdMhHxxwMh9owLRuc4M5iqx8ILCD-_arNBff_tc1iIF-5v9yM01-RFkvnnCA2dDPPoAGwh-R-5d-sfopwf3QJgAXTBs8_nFT5Ke0VlaVtDqCXnIBdPdgNFbBA&usqp=CAc",
       "description": "Ulei de floarea soarelui pentru gătit",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 47,
@@ -420,7 +466,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Conservă de porumb boabe",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 48,
@@ -429,7 +476,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTJBK0mI2KlRGVlwTzpjgr-AweEuilvHzedLy4VIbKhZlXvnVj9wRK4dFQKA2pa5TA6m3L0YcUEUwUMr6BvFDFspLuzKjkBiu6KrhHt190ifQGQnk-GTrWMqtMxb-Kq&usqp=CAc",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 49,
@@ -438,7 +486,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-GsnDN5-qcKGp5o3j7EmfFMhVDXXZEBy9opWYgzoCaxOh4Mc-ppgjZLJzPC5vuiC5br9_fuIJ_psmi28AZKGCtdkgT63VBcM0d1Z5xDQTOMbh16NKZc-plsCgxEsV7TR7sv0iWw&usqp=CAc",
       "description": "Făină de mălai pentru mămăligă",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 50,
@@ -447,7 +496,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw1NAIFfyTg7HL1zZAJFdcHngGW7cM1s9xwLMxb-jGJozxjWPK83fUM3KItY4&s",
       "description": "Zahăr vanilat pentru prăjituri",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 51,
@@ -456,7 +506,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRSe2Ss93K4RnSb4nBxKboMGvxrTTNlMilHWa24CthnJdUKEv4ueqNwdg-aGb6i3MA96j2GGeh5S3QO7pLOjCm16YB63yJ81YRIenbwtkOnTJgi0ngqRTE3DRo7DGI6ZXsh7xEoHZLnRjs&usqp=CAc",
       "description": "Biscuiți clasici",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 52,
@@ -465,7 +516,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Cârnați din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 53,
@@ -474,7 +526,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRiLMd-v76Tb7YR4jC_v0flTnm8Gx8qjN-zp-v9C1_jbThv5h9DwJs7ZlHbozoES7EtuDqxjPRwktiMo63g4VBsHLVUsaDXC4YZ9c6BI66xCVxRm8zSYxayMs4YrHA3cwIEtaAiFTFD&usqp=CAc",
       "description": "Băutură răcoritoare necarbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 54,
@@ -483,7 +536,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Y2QIbDpUEbjd9VirR25IVJEJ9NorL4GbuIgzDygj7f-cxZLEa6TK1OSwzQ&s",
       "description": "Iaurt natural din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 55,
@@ -492,7 +546,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Pâine de casă feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 56,
@@ -501,7 +556,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTWSL4VTL0cD4CUpOlKJx6uyAzo9W5rAfbQOPvL-bATiU7UUFkDGeJEWp61QdEDZ13-amaQFTqCEQHlGKs9DtJm_MXHJp6OTaWLKIuHUtDoQnML6_YPo3vYwP_uc649MkOPw_bH1Q&usqp=CAc",
       "description": "Conservă de roșii decojite",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 57,
@@ -510,7 +566,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSXZ1g0nWXtBsZFeYTv_SesUkD7afAw3I4pfvgpYvgGZSTUUjUi0qnKyeGgMkFB-lCaAzVH1oYUKlNhnycrj7TOW2FxHDrpoILf9y8ymNbqnuHTvTRUgeBp36efmT5g&usqp=CAc",
       "description": "Ciocolată cu lapte",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 58,
@@ -519,7 +576,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSWllJMj8GJoEwZRAettkoRtYJ7axW-iw5vDmETWUzc2fxctRSSG_zCrRxEfM&s",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 59,
@@ -528,7 +586,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS1Mqrsujvi5Z9GzW4bHUX7kCHkHo2qPtdsJwhyx82qHebhUZdMPRfT6pu_hgLw_Pc6j2Q6sZw2v9zZ9kv8IF7xBeqfjM4irzLEdEcVLoODEvL60OvEi5L-o561gxYLzjbMtQtKSC54Eg&usqp=CAc",
       "description": "Lapte bio de vacă, pasteurizat la temperatură înaltă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 60,
@@ -537,7 +596,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Pâine cu semințe feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 61,
@@ -546,7 +606,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4tFeeu0N9N8tGQ0ryCUXmx7w9Hq853Gj4y70L_OovOh3xLsOpQ9a8nIfTh_ZdAqQmh5ci_Yp3jDfOGH5AZuotrRsgcNq7jSQG5R4kynCEhlUxs6CEsDgnjQvv5PS3ongM8fRNvkU&usqp=CAc",
       "description": "Iaurt bio din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 62,
@@ -555,7 +616,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Salam de vară din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 63,
@@ -564,7 +626,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSoUSwPI4pNwgZbbGFNaI-1fp671FuQt2LSYJQ4GtQK1qcFgxUbn0zf8UiLuKe94f3IUbN0roIoW5jtGXNmLv4HoimSLUZyLJp4G8X6djozYqGtrNEiz5I3xq8cyYOBPRzJSe5bhw&usqp=CAc",
       "description": "Băutură răcoritoare necarbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 64,
@@ -573,7 +636,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Ciocolată cu lapte",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 65,
@@ -582,7 +646,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQvYJxdhamKgbyzKXvEw5KxaJhvqo7XEtrA3kaTpapjcEmdr-moWNn-TcLeq5tLZN8CfPFGGWttMeA66qSwNRn57m6-9gt4l1Kw1vpjPZA06m4A4VNhDdTA7XdCM-uQcHQUL_-bbbg&usqp=CAc",
       "description": "Ulei de floarea soarelui pentru gătit",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 66,
@@ -591,7 +656,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Conservă de ciuperci",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 67,
@@ -600,7 +666,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHb2YPRb4OEhtfZkY1vk5DvwZ93Pkfnjl4of1Xe93ev11TjwCsf-zSn0YmMA&s",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 68,
@@ -609,7 +676,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNWoYOCWH9hDpJ9vS_ZGBFCKC6jS_R2e3OmicKqc9l_VPtZjIs9Qm5suRPp24&s",
       "description": "Făină de secară",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 69,
@@ -618,7 +686,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Zahăr pudră pentru prăjituri",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 70,
@@ -627,7 +696,8 @@
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRWYxoGtEk6cOIReTAvhDfx_QRBBd5_zdsbNPKquQa0CXbvuX91jWJaO8EANLPsJkSGargiKSxk0lp1-68iVK2PAcOyjSjosxbVhAKBaBNtbuG8xNOWCKLG6_4f8lPqjfIX6hCDtNo&usqp=CAc",
       "description": "Biscuiți pentru mic dejun",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 71,
@@ -636,7 +706,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasXFQBo6LeuR0Qi_fP4KCFInLT2HuZlMVAEF1jEzeulX6XxWbGEgjR5pPvkM&s",
       "description": "Cârnați din carne de pui",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 72,
@@ -645,7 +716,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCqxGbfA0ddJXxXDc2t8lehOaIxm3OWCYngh2CINMY_as38LwS2LLUBxATdcH9KeLhas4XSjssEV6_DnikelyklfbIW1Sgskmp_qHNsZy9n5DibIllH_uyYA241bBtpr3Z8iJl5oE&usqp=CAc",
       "description": "Băutură răcoritoare necarbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 73,
@@ -654,7 +726,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI5IqfDdsxcStNexnPWPM9y49Nc4SER8mWf-orlW7hFimd54IgA_lsHMQphQ&s",
       "description": "Iaurt bio din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 74,
@@ -663,7 +736,8 @@
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRwOXmM6CHJqcIO8trf8_irRJ2rWxQxMLOairUUlNavgr51bQDvCbXyhYK1uiRHt2GPfCXz4ZaMMgdDixmpD5emUG9y8-DdJy3sWtw_KDPvEx5KzV4T6ZDqyGS13iuXRgZ_hVb14i0&usqp=CAc",
       "description": "Pâine cu secară feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 75,
@@ -672,7 +746,8 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQIrFrfUv1S7b6fBt7erWUNtD7AY9Hp6n7d4m7YurXX6HHtdbG1Ed1rPevP2FN53yleXE9RaP_Tplj4Vm38qSmHGNyDSzZARPazmU1PUkEM3x2qFeMQXggGvcITee2bnUk_iHlvtQg&usqp=CAc",
       "description": "Conservă de ananas",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 76,
@@ -681,7 +756,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTobWEoZIvhFwuOewc6vV7PIoYPp_0Cj8oNh9ApMMs7KdyC_J-QdMFmpPfjbA&s",
       "description": "Ciocolată premium",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 77,
@@ -690,7 +766,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 78,
@@ -699,7 +776,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTpWmGhSGQg5l3YCc7733E9urnz-PAHVDf2-WbcLnha-6NW3_6w7jE_EhnIk-DidmQ_bmjuJRvM2MuzbSGzVfoaIaBWyZPavL9dEtkPRGbdLbvPGFUkl48iU_NfB50FLgNDZ8XP9qU&usqp=CAc",
       "description": "Lapte UHT de vacă, pasteurizat și omogenizat",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 79,
@@ -708,7 +786,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Pâine cu cartofi feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 80,
@@ -717,7 +796,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT3YDPSfDCWHLJSsr8tR8J_5wJ15U6xEyTAyxM4jCbgUjrU6-VEGBSvSkYcYU1kDA0_lCRPZlOQ7iNJxG4VU-BNYkeUe9R2R67kGeQ1L18xvhYRiE6rYpabuGg1sIqNYbhISOwyeDc&usqp=CAc",
       "description": "Iaurt bio din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 81,
@@ -726,7 +806,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Salam de Sibiu din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 82,
@@ -735,7 +816,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Băutură răcoritoare necarbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 83,
@@ -744,7 +826,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOWJo_5Ew0yzDpXFl3SIUSnFPPJFPvAZwNLO_fNCEV7h8x-4fI5XuYuWqPDA&s",
       "description": "Ciocolată premium",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 84,
@@ -753,7 +836,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Ulei de floarea soarelui pentru gătit",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 85,
@@ -762,7 +846,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTTts5k8miUsk_tiY_cyoTANoA4sgDZ3RrrWJ2p5GGgYOIzOR3nA_ywm5tkuJUqDoX-gLsnNIe6wla6tN1NeqTiULMgVfHfZjN0HOwQ8dbVtT_y9ZlIhuJLRwFqvZDj-BAgu8NY92z8T1A&usqp=CAc",
       "description": "Conservă de fasole verde",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 86,
@@ -771,7 +856,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ--Cp_wmfVjostRbHLUZkkFFnrYfxzcByZU8GBBCj43oo67cAGsXOaFhbcU1e7qpA4krmgy8MkYcMVbm7-tY5iU0FTG4f8c3Ae8oGjsIUzGwNswheOJ2XYn4lBH3wo-2FM6VWnBQ&usqp=CAc",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 87,
@@ -780,7 +866,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Făină de grâu",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 88,
@@ -789,7 +876,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmvwLb9JQvQbrjhFTc5oPSpohKh0bz16PIfZBvg2L2-PUyvwnCeDAMVg8lPPk&s",
       "description": "Zahăr gelifiant pentru gemuri",
       "category": "Produse de bază",
-      "location": "Row 7, Middle Shelf, Basic Products Area"
+      "location": "Row 7, Middle Shelf, Basic Products Area",
+      "status": "Available"
   },
   {
       "id": 89,
@@ -798,7 +886,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQmYUHYmKPAH-Zov_hixMM1shV9dC-wAa5961Uw9ado_TdOGDUH9fU__bgpDpZqxLD_S8oP8gBOOfSLcc6IGF8Qqljd1h5o44FseNUabjlmQCgwRM1YjAMBK5R-H2cJDL67w6ljDA&usqp=CAc",
       "description": "Biscuiți sărați",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 90,
@@ -807,7 +896,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdq81VJtdOJw4LVpdalUrjCeQ1s7wDJ6e6Mzc1Fk4bdMOwtHBxFa-kL2VFkWw&s",
       "description": "Cârnați din carne de pui",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   },
   {
       "id": 91,
@@ -816,7 +906,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Băutură răcoritoare necarbogazoasă",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 92,
@@ -825,7 +916,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Iaurt cu fructe din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 1, Top Shelf, Dairy Section"
+      "location": "Row 1, Top Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 93,
@@ -834,7 +926,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Pâine cu secară și semințe feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 94,
@@ -843,7 +936,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iz0eBEcBMCtjjp7BfoUEc8-Fim4i22ZWyvmGLGwo6I_UnYIWpeMnPxPwMIg&s",
       "description": "Conservă de mazăre verde",
       "category": "Conserve",
-      "location": "Row 15, Top Shelf, Canned Food Section"
+      "location": "Row 15, Top Shelf, Canned Food Section",
+      "status": "Available"
   },
   {
       "id": 95,
@@ -852,7 +946,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXtTHNKab7BPMxoR82Da2es1ngRYswYghw-tbPD5wjOzeiiOIVAq1_GdrKcTR75IVqECGDpgLM4Xb1laqeue-Oz3Lyln09c8tl0Q1Tok1xrPdATfaiaUHd5uYUrF5L96wH4JtbFA&usqp=CAc",
       "description": "Ciocolată premium",
       "category": "Dulciuri",
-      "location": "Row 4, Eye Level Shelf, Sweets Area"
+      "location": "Row 4, Eye Level Shelf, Sweets Area",
+      "status": "Available"
   },
   {
       "id": 96,
@@ -861,7 +956,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFHNlUzMsa2mFMq0MWG2cIUykaniNztLIyz82pHyLISMGdAk60vfTJYvmvbg&s",
       "description": "Apă minerală naturală",
       "category": "Băuturi",
-      "location": "Row 9, Floor Level, Beverages Section"
+      "location": "Row 9, Floor Level, Beverages Section",
+      "status": "Available"
   },
   {
       "id": 97,
@@ -870,7 +966,8 @@
       "image": "https://via.placeholder.com/150?text=No+Image",
       "description": "Lapte UHT de vacă, pasteurizat la temperatură înaltă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 98,
@@ -879,7 +976,8 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuKywbN_ynYLFJEj7YiNb9VnsrBUfd2Ss0v--fqIDo7S8nb0cjj8r9FqIxro&s",
       "description": "Pâine cu secară și cartofi feliată",
       "category": "Panificație",
-      "location": "Row 14, Packaged Bread Shelf, Bakery Section"
+      "location": "Row 14, Packaged Bread Shelf, Bakery Section",
+      "status": "Available"
   },
   {
       "id": 99,
@@ -888,7 +986,8 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSM10asbweWDbpD6Gxit6BwX3II9XVVNUqRsobUx4eUBq37LedanqW9VLuQpRgByAVVnTeW8Nl6pZ-3Isc4OL5GajuAwtv__hP3e1pbLKG4jeJz4fLnuf2OgbKgH0FN5mT9cSM_wOM&usqp=CAc",
       "description": "Iaurt cu cereale din lapte de vacă",
       "category": "Lactate",
-      "location": "Row 2, Middle Shelf, Dairy Section"
+      "location": "Row 2, Middle Shelf, Dairy Section",
+      "status": "Available"
   },
   {
       "id": 100,
@@ -897,6 +996,7 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTythKS4jjOEj2V-6vJ_X4JIVT30JPAszO5O_Q8-UC0431MjXX7cTJ534SUTw&s",
       "description": "Salam de vară din carne de porc",
       "category": "Mezeluri",
-      "location": "Row 11, Top Shelf, Cold Cuts Section"
+      "location": "Row 11, Top Shelf, Cold Cuts Section",
+      "status": "Available"
   }
 ]

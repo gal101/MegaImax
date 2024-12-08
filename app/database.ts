@@ -1,4 +1,5 @@
 import { EventEmitter } from 'events';
+import * as FileSystem from 'expo-file-system';
 import productsData from './database.json';
 
 export interface Product {
@@ -8,15 +9,10 @@ export interface Product {
   image: string;
   description: string;
   category: string;
-  status?: 'Available' | 'Not available' | 'Expired';
+  status: 'Available' | 'Not available' | 'Expired';
 }
 
-// Initialize products with status
-export const products: Product[] = productsData.map(product => ({
-  ...product,
-  status: 'Available'
-}));
-
+export const products: Product[] = productsData;
 export const databaseEvents = new EventEmitter();
 
 export const initializeDatabase = () => {
@@ -34,16 +30,21 @@ export const checkProductExists = (query: string, callback: (products: Product[]
   callback(foundProducts);
 };
 
-export const updateProductStatus = (id: number, newStatus: Product['status']) => {
+export const updateProductStatus = async (id: number, newStatus: Product['status']) => {
   const productIndex = products.findIndex(product => product.id === id);
   if (productIndex !== -1) {
     products[productIndex].status = newStatus;
+    
+    // Update the JSON file
+    const jsonPath = FileSystem.documentDirectory + 'database.json';
+    await FileSystem.writeAsStringAsync(jsonPath, JSON.stringify(products, null, 2));
+    
     databaseEvents.emit('productsUpdated', products);
   }
 };
 
-export const clearProductReport = (id: number) => {
-  updateProductStatus(id, 'Available');
+export const clearProductReport = async (id: number) => {
+  await updateProductStatus(id, 'Available');
 };
 
 export { products };
